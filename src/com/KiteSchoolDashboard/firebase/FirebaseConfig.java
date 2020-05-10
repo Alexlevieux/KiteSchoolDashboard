@@ -8,6 +8,11 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.DatabaseReference.CompletionListener;
+import com.google.firebase.database.FirebaseDatabase;
+import com.sun.javafx.binding.Logging;
 import com.google.cloud.firestore.Firestore;
 
 
@@ -26,7 +31,7 @@ public class FirebaseConfig {
 	static String dbUrl = "https://bookboard-list.firebaseio.com";
 
 
-	public static Firestore init() throws IOException {
+	public static DatabaseReference init() throws IOException {
 
 		FileInputStream refreshToken = new FileInputStream(path);
  
@@ -34,9 +39,12 @@ public class FirebaseConfig {
 		    .setCredentials(GoogleCredentials.fromStream(refreshToken))
 		    .setDatabaseUrl(dbUrl)
 		    .build();
-
-		FirebaseApp.initializeApp(options);
-		Firestore fs =  fireStore();
-		return fs;
+        if (FirebaseApp.getApps().isEmpty()) {
+		FirebaseApp.initializeApp(options);}
+        
+		DatabaseReference db =  FirebaseDatabase.getInstance().getReference();
+		
+		return db;
+		
 	}
 }
