@@ -49,6 +49,9 @@ public class Student {
 	public void setLessonsBalance(int lessonsBalance) {
 		this.lessonsBalance = lessonsBalance;
 	}
+     public Student() {
+	      
+     }
 	public Student(List<Object> lessons, Integer numberOfLessons, String id, String firstName, String surName,
 			Integer lessonsBalance) {
 		super();

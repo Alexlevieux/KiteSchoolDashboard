@@ -4,16 +4,6 @@ import java.util.List;
 
 public class KiteLesson extends Lesson {
 
-	private String kiteLessonType;
-
-	public String getKiteLessonType() {
-		return kiteLessonType;
-	}
-
-	public void setKiteLessonType(String kiteLessonType) {
-		this.kiteLessonType = kiteLessonType;
-	}
-
 	public String getWeatherCondition() {
 		return weatherCondition;
 	}
@@ -50,12 +40,17 @@ public class KiteLesson extends Lesson {
 		this.students = students;
 	}
 
-	public KiteLesson(int date, List<String>instructors, boolean completed, int lenghtInHour, String id, String kiteSpot,
-			String description, List<Object> students) {
-		super(date, instructors, completed, lenghtInHour, id);
-		this.kiteSpot = kiteSpot;
-		this.weatherCondition = description;
-		this.students = students;
+	public KiteLesson() {
+		
+		super();
+		this.setLessonType("Kitesurf");
+		
+	}
+
+	public KiteLesson(int date, List<Object> instructors, int lenghtInHour, String id) {
+		super(date, instructors, lenghtInHour, id);
+		this.setLessonType("Kitesurf");
+
 	}
 
 }

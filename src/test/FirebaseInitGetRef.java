@@ -13,19 +13,18 @@ public class FirebaseInitGetRef implements AsyncTestable {
 	DatabaseReference db;
 	String finalResult = "";
 
-	@Override
+
 	public String start() {
 		// TODO Auto-generated method stub
 		try {
 			FirebaseConfig.init().getRef().addListenerForSingleValueEvent(new ValueEventListener() {
 
-				@Override
+				
 				public void onDataChange(DataSnapshot snapshot) {
 					// TODO Auto-generated method stub
 					onFinish(snapshot.getRef().toString());
 				}
 
-				@Override
 				public void onCancelled(DatabaseError error) {
 					// TODO Auto-generated method stub
 
@@ -40,7 +39,7 @@ public class FirebaseInitGetRef implements AsyncTestable {
 		return finalResult;
 	}
 
-	@Override
+	
 	public void onFinish(String result) {
 		// TODO Auto-generated method stub
 		finalResult = result;

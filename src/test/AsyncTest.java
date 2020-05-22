@@ -4,7 +4,10 @@ package test;
 
 
 
-import com.sun.javafx.binding.Logging;
+
+
+
+import java.util.logging.*;
 
 public class AsyncTest {
  
@@ -19,7 +22,7 @@ public class AsyncTest {
 			synchronized(test) {
 		
 				String result = test.start();
-		        Logging.getLogger().info( "test result : " + arg + " is " + result );
+		        Logger.getAnonymousLogger().info( "test result : " + arg + " is " + result );
 			}
 	    }
 		

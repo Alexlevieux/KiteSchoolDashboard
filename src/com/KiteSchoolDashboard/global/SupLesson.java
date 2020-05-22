@@ -11,12 +11,12 @@ public class SupLesson extends Lesson {
 
 	
 	public SupLesson(Lesson lesson) {
-		super(lesson.date, lesson.instructors, lesson.completed, lesson.lenghtInHour, lesson.id);
+		super(lesson.dateTime, lesson.instructors, lesson.lenghtInHour, lesson.id);
 	}
 
-	public SupLesson(int date, List<String> instructors, boolean completed, int lenghtInHour, String id,
+	public SupLesson(int date, List<String> instructors, int lenghtInHour, String id,
 			List<Object> students, String supLessonType, String supSpot, String weatherCondition) {
-		super(date, instructors, completed, lenghtInHour, id);
+		super(date, instructors,  lenghtInHour, id);
 		this.students = students;
 		this.supLessonType = supLessonType;
 		this.supSpot = supSpot;

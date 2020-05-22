@@ -9,8 +9,8 @@ public interface StudentDao {
 	public Student getStudent(String id);
 	public List<Student> getStudents(String searchQuery);
 	public List<Student> getStudentswithIds(String[] ids);
-	public String updateStudent(String id);
-	public String[] updateStudents (String ids);
+	public String updateStudent(String id, Student student);
+	public String[] updateStudents (List<Student> students);
 	public String createStudent(Student student);
 	public String[] createStudents(List<Student> students);
 	public void	deleteStudent(String id);
